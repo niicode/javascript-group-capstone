@@ -1,3 +1,5 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css');
+
 *,
 ::after,
 ::before {
@@ -12,6 +14,8 @@ body {
   font-size: 20px;
   font-family: "Comic Sans MS", "Comic Sans", sans-serif;
   text-align: center;
+  background-color: #1a1a1a;
+  color: #fff;
 }
 
 .navbar {
@@ -50,7 +54,7 @@ body {
 
 .nav-link {
   margin: 10px 10px;
-  color: black;
+  color: #fff;
   font-weight: bold;
   font-size: 20px;
 }
@@ -62,6 +66,49 @@ body {
 .likes {
   display: flex;
   align-items: center;
+}
+
+.shows {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+}
+
+.show {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.color-liked {
+  color: #f00;
+}
+
+.comments-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.comments-btn:hover {
+  background-color: #f00;
+  color: #fff;
 }
 
 footer {

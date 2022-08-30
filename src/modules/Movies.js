@@ -7,7 +7,7 @@ class Movies {
     fetch(baseUrl)
       .then((response) => response.json())
       .then((data) => {
-        localStorage.setItem('movies', JSON.stringify(data.splice(90, 90)));
+        localStorage.setItem('movies', JSON.stringify(data.splice(0, 90)));
       });
   }
 

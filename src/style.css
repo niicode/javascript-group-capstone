@@ -11,9 +11,7 @@ body {
   font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 
-
-
 .likes {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }

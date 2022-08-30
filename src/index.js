@@ -1,12 +1,12 @@
 import './style.css';
-import Movies from "./modules/Movies";
+import Movies from './modules/Movies.js';
 
 const shows = document.querySelector('.shows');
 const movies = new Movies();
 
 const renderMovies = () => {
   shows.innerHTML = '';
-  movies.getAllMovies().forEach(movie => {
+  movies.getAllMovies().forEach((movie) => {
     const show = document.createElement('div');
     show.classList.add('show');
     show.innerHTML = `
@@ -22,10 +22,9 @@ const renderMovies = () => {
       <button type="button" class="comments">Comments</button>
     `;
     shows.appendChild(show);
-  }
-  );
-}
+  });
+};
 
 window.onload(() => {
   renderMovies();
-})
+});

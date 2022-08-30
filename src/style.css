@@ -10,3 +10,8 @@ body {
   font-size: 20px;
   font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
+
+.likes {
+  display: flex;
+  align-items: center;
+}

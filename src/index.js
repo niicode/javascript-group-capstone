@@ -2,7 +2,10 @@ import './style.css';
 import Movies from './modules/Movies.js';
 
 const shows = document.querySelector('.shows');
+const movieCount = document.querySelector('.movies');
 const movies = new Movies();
+
+movieCount.innerHTML = `Movies(${movies.getMoviesLength()})`;
 
 const renderMovies = () => {
   shows.innerHTML = '';

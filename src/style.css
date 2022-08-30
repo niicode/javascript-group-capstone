@@ -4,14 +4,74 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
   font-size: 20px;
   font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.nav-branding {
+  position: relative;
+  height: 90px;
+}
+
+.nav-branding img {
+  width: 150px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: 10rem;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  align-self: center;
+  margin: 20px 80px 9px 10px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-link {
+  margin: 10px 10px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.movies {
+  text-decoration: underline;
 }
 
 .likes {
   display: flex;
   align-items: center;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  top: 50px;
+  margin-bottom: 2rem;
+  border: 3px solid black;
+}
+
+.footer-content {
+  font-weight: bold;
 }

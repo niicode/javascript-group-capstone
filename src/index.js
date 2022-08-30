@@ -1,6 +1,6 @@
 import './style.css';
 import Movies from './modules/Movies.js';
-import { involvementApiBaseURL, uniqueID } from "./modules/variables";
+import { involvementApiBaseURL, uniqueID } from './modules/variables.js';
 
 const shows = document.querySelector('.shows');
 const movieCount = document.querySelector('.movies');
@@ -29,7 +29,6 @@ const renderMovies = () => {
 renderMovies();
 
 const likeCounts = document.querySelectorAll('.likes-count');
-console.log(likeCounts)
 const fetchLikes = () => {
   fetch(`${involvementApiBaseURL}apps/${uniqueID}/likes`)
     .then((res) => res.json())
@@ -43,32 +42,29 @@ const fetchLikes = () => {
       }
     });
 
-  //add event listener to all heart icons
+  //  add event listener to all heart icons
   const heartIcons = document.querySelector('.shows');
   heartIcons.addEventListener('click', (e) => {
     if (!e.target.classList.contains('color-liked')) {
       if (e.target.classList.contains('bi-heart-fill')) {
-        const { id } = e.target
+        const { id } = e.target;
         const movie = {
           item_id: id,
-        }
+        };
         e.target.classList.add('color-liked');
         fetch(`${involvementApiBaseURL}apps/${uniqueID}/likes`, {
           method: 'POST',
           body: JSON.stringify(movie),
           headers: {
             'Content-Type': 'application/json',
-          }
+          },
         })
-          .then(() => fetchLikes())
+          .then(() => fetchLikes());
       }
     }
   });
-}
-
-
+};
 
 fetchLikes();
-
 
 window.addEventListener('DOMContentLoaded', renderMovies);

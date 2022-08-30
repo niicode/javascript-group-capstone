@@ -25,6 +25,4 @@ const renderMovies = () => {
   });
 };
 
-window.onload(() => {
-  renderMovies();
-});
+window.addEventListener('DOMContentLoaded', renderMovies);

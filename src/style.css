@@ -154,6 +154,19 @@ footer {
   visibility: hidden;
 }
 
+#comment-count {
+  font-size: 20px;
+}
+
+#comments {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
 .modal-box {
   background-color: #f4f4f4;
   margin: 2% auto;
@@ -220,5 +233,6 @@ input {
 }
 
 .modal-img {
-  height: 40rem;
+  width: 90%;
+  height: 33rem;
 }

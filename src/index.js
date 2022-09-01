@@ -61,7 +61,9 @@ const renderMovies = () => {
         const username = e.target[0].value;
         const comment = e.target[1].value;
         CommentsApi.addComments(btn.dataset.id, username, comment);
-        e.target.reset();
+        setTimeout(() => {
+          form.reset();
+        }, 1000);
       });
       displayComments(btn.dataset.id);
     });

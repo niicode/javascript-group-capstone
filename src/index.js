@@ -1,10 +1,11 @@
 import './style.css';
 import Movies from './modules/Movies.js';
 import { involvementApiBaseURL, uniqueID } from './modules/variables.js';
+import CommentsApi, { commentsCount }  from './modules/Comments.js';
 
 const shows = document.querySelector('.shows');
 const movieCount = document.querySelector('.movies');
-const movies = new Movies();
+export const movies = new Movies();
 
 movieCount.innerHTML = `Movies(${movies.getMoviesLength()})`;
 
@@ -23,6 +24,53 @@ const renderMovies = () => {
       <button type="button" data-id="${movie.id}" class="comments-btn">Comments</button>
     `;
     shows.appendChild(show);
+  });
+
+  const displayComments = (id) => {
+    const comments = CommentsApi.getComments(id);
+    comments.then((data) => {
+      document.getElementById('comment-count').innerHTML = (commentsCount(data) !== undefined) ? `Comments(${commentsCount(data)})` : 'Comments(0)';
+      const commentsContainer = document.getElementById('comments');
+      commentsContainer.innerHTML = '';
+      data.forEach((comment) => {
+        commentsContainer.innerHTML += `
+      <div class="comment">
+        <p>${comment.creation_date} ${comment.username}: ${comment.comment} </p>
+      </div>
+      `;
+      });
+    });
+  }
+
+  // show modal when comments button is clicked
+  const commentsBtn = document.querySelectorAll('.comments-btn');
+  commentsBtn.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      movies.getAllMovies().forEach((movie) => {
+        if (movie.id === Number(e.target.dataset.id)) {
+          const modal = document.querySelector('.modal-container');
+          modal.style.visibility = 'visible';
+          document.querySelector('.modal-img').src = movie.image.medium;
+          document.querySelector('.modal-title').innerHTML = movie.name;
+          document.querySelector('.description').innerHTML = movie.summary;
+        }
+      });
+      const form = document.querySelector('#form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const username = e.target[0].value;
+        const comment = e.target[1].value;
+        CommentsApi.addComments(btn.dataset.id,username, comment);
+        e.target.reset();
+      });
+      displayComments(btn.dataset.id);
+    });
+  })
+
+  const closeBtn = document.querySelector('.modal-close-btn');
+  closeBtn.addEventListener('click', () => {
+    const modal = document.querySelector('.modal-container');
+    modal.style.visibility = 'hidden';
   });
 };
 
@@ -64,6 +112,8 @@ const fetchLikes = () => {
     }
   });
 };
+
+
 
 fetchLikes();
 

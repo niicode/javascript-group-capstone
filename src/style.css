@@ -10,6 +10,31 @@
   list-style: none;
 }
 
+main {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-justify-start {
+  justify-content: flex-start;
+}
+
 body {
   font-size: 20px;
   font-family: "Comic Sans MS", "Comic Sans", sans-serif;
@@ -140,7 +165,7 @@ footer {
   background-color: #f4f4f4;
   margin: 2% auto;
   padding: 10px;
-  width: 60%;
+  width: 50%;
   border-radius: 20px;
 }
 
@@ -202,5 +227,71 @@ input {
 }
 
 .modal-img {
-  height: 40rem;
+  height: 33rem;
+  width: 40rem;
+}
+
+@media screen and (max-width: 976px) {
+  main {
+    align-items: center;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .modal-container {
+    width: 100%;
+    z-index: 10000;
+  }
+
+  .modal-img {
+    width: 10rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    padding: 1rem;
+  }
+
+  .navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+  }
+
+  .nav-branding {
+    /* padding: 0 30px; */
+    cursor: pointer;
+    margin-bottom: 100px;
+  }
+
+  .nav-menu {
+    margin-top: 50px;
+    width: 100%;
+  }
+
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form {
+    gap: 1rem;
+  }
+
+  .modal-box {
+    width: 80%;
+  }
+
+  .modal-img {
+    height: 20rem;
+    width: 17rem;
+  }
+
+  .add-score-section {
+    margin-top: 20px;
+  }
 }

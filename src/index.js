@@ -1,11 +1,11 @@
 import './style.css';
 import Movies from './modules/Movies.js';
 import { involvementApiBaseURL, uniqueID } from './modules/variables.js';
-import CommentsApi, { commentsCount }  from './modules/Comments.js';
+import CommentsApi, { commentsCount } from './modules/Comments.js';
 
 const shows = document.querySelector('.shows');
 const movieCount = document.querySelector('.movies');
-export const movies = new Movies();
+const movies = new Movies();
 
 movieCount.innerHTML = `Movies(${movies.getMoviesLength()})`;
 
@@ -40,7 +40,7 @@ const renderMovies = () => {
       `;
       });
     });
-  }
+  };
 
   // show modal when comments button is clicked
   const commentsBtn = document.querySelectorAll('.comments-btn');
@@ -60,12 +60,12 @@ const renderMovies = () => {
         e.preventDefault();
         const username = e.target[0].value;
         const comment = e.target[1].value;
-        CommentsApi.addComments(btn.dataset.id,username, comment);
+        CommentsApi.addComments(btn.dataset.id, username, comment);
         e.target.reset();
       });
       displayComments(btn.dataset.id);
     });
-  })
+  });
 
   const closeBtn = document.querySelector('.modal-close-btn');
   closeBtn.addEventListener('click', () => {
@@ -112,8 +112,6 @@ const fetchLikes = () => {
     }
   });
 };
-
-
 
 fetchLikes();
 

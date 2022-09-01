@@ -1,21 +1,21 @@
-import { involvementApiBaseURL, uniqueID } from "./variables";
+import { involvementApiBaseURL, uniqueID } from './variables.js';
 
 class CommentsApi {
-  static addComments (id, comment, username) {
+  static addComments(id, comment, username) {
     const url = `${involvementApiBaseURL}apps/${uniqueID}/comments`;
     const data = {
       item_id: id,
       username,
       comment,
-    }
+    };
     fetch(url, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     })
-      .then(res => {
+      .then((res) => {
         if (res.status === 201) {
           const commentAlert = document.querySelector('.comment-alert');
           commentAlert.style.color = 'green';
@@ -28,7 +28,7 @@ class CommentsApi {
           commentAlert.style.color = 'red';
           commentAlert.innerHTML = 'Comment failed to add';
         }
-      })
+      });
   }
 
   static getComments = async (id) => {
@@ -43,6 +43,5 @@ class CommentsApi {
 }
 
 export const commentsCount = (data) => data.length;
-
 
 export default CommentsApi;

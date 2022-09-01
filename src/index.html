@@ -16,7 +16,6 @@
         <div class="nav-branding">
           <img src="https://i.ibb.co/r5krrdz/logo.png" alt="Netflix" />
         </div>
-
         <ul class="nav-menu">
           <li class="nav-item">
             <a href="#" class="nav-link movies">Movies()</a>
@@ -30,11 +29,9 @@
         </ul>
       </nav>
     </header>
-
     <main>
       <div class="shows"></div>
     </main>
-
     <!-- modal -->
     <section id="movie-modal">
       <div class="modal-container">
@@ -44,7 +41,11 @@
           <img class="modal-img" src="#" alt="" />
         </div>
           <h2 class="modal-title">Movie Title</h2>
-        <p class="description">
+          <div>
+            <p class="movie-genre"></p>
+            <p class="movie-rating"></p>
+          </div>
+        <h4 class="description">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est atque
           repellat ad dignissimos
         </p>
@@ -54,23 +55,19 @@
         <div id="comments" class="comments"></div>
         <div class="add-score-section">
           <p>Add a comment</p>
-
           <form id="form">
             <input type="text" class="username" id="username" placeholder="Your Name..." required />
             <input
-              type="text"
               class="form-input-one comment"
               placeholder="Your Insights..."
               id="comment"
-              required
-            />
+              required/>
             <button type="submit" class="form-btn">Comment</button>
           </form>
         </div>
       </div>
       </div>
     </section>
-
     <footer>
       <p class="footer-content">
         &copy; 2022 Created by Elijahdre and Niicode.

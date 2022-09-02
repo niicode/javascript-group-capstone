@@ -47,6 +47,8 @@ To get a local copy up and running follow these simple example steps.
 
 - GitHub: [@niicode](https://github.com/niicode)
 - Twitter: [@_niicode](https://twitter.com/_niicode)
+- LinkedIn: [Nii Darku](https://www.linkedin.com/in/nii-darku-dodoo-082018148/
+  )
 
 👤 **Elijah Odjegba**
 

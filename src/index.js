@@ -29,13 +29,13 @@ const renderMovies = () => {
   const displayComments = (id) => {
     const comments = CommentsApi.getComments(id);
     comments.then((data) => {
-      document.getElementById('comment-count').innerHTML = (commentsCount(data) !== undefined) ? `Comments(${commentsCount(data)})` : 'Comments(0)';
-      const commentsContainer = document.getElementById('comments');
+      document.getElementById('comment-count').innerHTML = (commentsCount(data) !== undefined) ? commentsCount(data) : 0;
+      const commentsContainer = document.getElementById('comments-container');
       commentsContainer.innerHTML = '';
       data.forEach((comment) => {
         commentsContainer.innerHTML += `
       <div class="comment">
-        <p>${comment.creation_date} ${comment.username}: ${comment.comment} </p>
+        <p>${comment.creation_date} <i>${comment.username}</i>: ${comment.comment.toUpperCase()} </p>
       </div>
       `;
       });
@@ -48,14 +48,19 @@ const renderMovies = () => {
     btn.addEventListener('click', (e) => {
       movies.getAllMovies().forEach((movie) => {
         if (movie.id === Number(e.target.dataset.id)) {
-          const modal = document.querySelector('.modal-container');
-          modal.style.visibility = 'visible';
-          document.querySelector('.modal-img').src = movie.image.medium;
-          document.querySelector('.modal-title').innerHTML = movie.name;
-          document.querySelector('.description').innerHTML = movie.summary;
+          const modal = document.querySelector('#movie-modal');
+          modal.style.display = 'flex';
+          document.getElementById('modal-movie-img').src = movie.image.medium;
+          document.getElementsByClassName('mod-img-wrapper')[0].style.backgroundImage = `url(${movie.image.medium})`;
+          document.getElementById('modal-movie-title').innerHTML = movie.name;
+          document.getElementById('modal-movie-release-date').innerHTML = movie.premiered;
+          document.getElementById('modal-movie-description').innerHTML = movie.summary;
+          document.getElementById('modal-movie-rating').innerHTML = movie.rating.average;
+          document.getElementById('modal-movie-language').innerHTML = movie.language;
+          document.getElementById('comment-form').setAttribute('data-id', movie.id);
         }
       });
-      const form = document.querySelector('#form');
+      const form = document.querySelector('#comment-form');
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         const username = e.target[0].value;
@@ -69,10 +74,10 @@ const renderMovies = () => {
     });
   });
 
-  const closeBtn = document.querySelector('.modal-close-btn');
+  const closeBtn = document.querySelector('.close-modal');
   closeBtn.addEventListener('click', () => {
-    const modal = document.querySelector('.modal-container');
-    modal.style.visibility = 'hidden';
+    const modal = document.querySelector('#movie-modal');
+    modal.style.display = 'none';
   });
 };
 

@@ -1,56 +1,58 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+![](https://img.shields.io/badge/Version-0.1.0-blue.svg)
 
-# Project Name
+# Netflix Clone
 
-> Description the project.
+> A Netflix clone built with Vanilla JavaScript, HTML, and CSS. This project was built during our JavaScript Capstone Project at Microverse.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- Css
+- JavaScript
+- Webpack
+- Jest
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[soon](https://livedemo.com)
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
 
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+- Node.js
+- npm
+- Webpack
 
 ### Setup
-
-### Install
+- Clone the repository to your local machine `git clone https://github.com/niicode/javascript-group-capstone.git/`
+- Run `npm install` to install the dependencies
+- Run `npm run build` to build the project
 
 ### Usage
+- Run `npm start` to start the server
 
 ### Run tests
-
-### Deployment
+- Run `npm test` to run the tests
 
 
 
 ## Authors
 
-👤 **Author1**
+👤 **Nii Darku**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@niicode](https://github.com/niicode)
+- Twitter: [@_niicode](https://twitter.com/_niicode)
 
-👤 **Author2**
+👤 **Elijah Odjegba**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Elijah](https://github.com/Elijahdre)
+- Twitter: [@Kingglijah](https://twitter.com/kingglijah)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/elijah-odjegba-862708179/)
 
 ## 🤝 Contributing
 
@@ -64,12 +66,10 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- [Microverse](https://www.microverse.org/)
+- [TvMaze API](http://www.tvmaze.com/api)
+- [NetFlix](https://www.netflix.com/)
 
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._

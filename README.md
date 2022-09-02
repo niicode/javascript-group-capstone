@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[soon](https://livedemo.com)
+[Live](https://niicode.github.io/javascript-group-capstone/)
 
 
 ## Getting Started
